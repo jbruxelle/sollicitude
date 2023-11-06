@@ -14,7 +14,7 @@
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@sobriquet/config": "workspace:*"
+    "@sollicitude/config": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
