@@ -1,0 +1,86 @@
+{
+  "name": "@sollicitude/config",
+  "version": "0.0.0",
+  "description": "Sollicitude is a set of tools to use git issues (Github, GitLab...) as a ticketing system. This is the configuration package for Sollicitude.",
+  "keywords": [
+    "ticket",
+    "support",
+    "git",
+    "typescript",
+    "javascript",
+    "github",
+    "gitlab",
+    "sollicitude",
+    "config"
+  ],
+  "repository": "https://github.com/jbruxelle/sollicitude",
+  "author": {
+    "name": "Julian BRUXELLE",
+    "email": "contact@julianbruxelle.fr",
+    "url": "https://github.com/jbruxelle"
+  },
+  "bugs": {
+    "url": "https://github.com/jbruxelle/sollicitude/issues"
+  },
+  "homepage": "https://github.com/jbruxelle/sollicitude#readme",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "unbuild",
+    "prepack": "pnpm run build",
+    "lint": "pnpm eslint:check && pnpm prettier:check",
+    "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
+    "eslint:check": "eslint --cache .",
+    "eslint:fix": "eslint --cache . --fix",
+    "prettier:check": "prettier -c .",
+    "prettier:fix": "prettier -c . --write",
+    "test": "pnpm lint && pnpm test:types",
+    "test:types": "tsc --noEmit --skipLibCheck"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "tsconfig.base.json",
+    ".eslintrc.cjs",
+    ".prettierrc.cjs"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./typescript": "./tsconfig.base.json",
+    "./prettier": "./.prettierrc.cjs",
+    "./eslint": "./.eslintrc.cjs",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.cts"
+      }
+    }
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^47.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": "./.prettierrc.cjs",
+  "devDependencies": {
+    "@types/eslint": "^8.44.6"
+  }
+}

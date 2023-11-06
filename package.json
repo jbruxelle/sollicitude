@@ -1,0 +1,36 @@
+{
+  "name": "sollicitude",
+  "version": "1.0.0",
+  "description": "Sollicitude is a set of tools to use git issues (Github, GitLab...) as a ticketing system.",
+  "main": "index.js",
+  "scripts": {
+    "packages:version": "changeset version",
+    "packages:changeset": "changeset",
+    "packages:release": "changeset publish",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "lint:staged": "pnpm lint-staged",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
+    "eslint": "^8.53.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "vitest": "^0.34.6"
+  },
+  "lint-staged": {
+    "*": "prettier -c --ignore-unknown --write",
+    "*.{ts,js}": "eslint --cache --fix"
+  }
+}
